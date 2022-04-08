@@ -1,16 +1,10 @@
 const { Sequelize } = require("sequelize");
 
 const database = {
-    connection: new Sequelize({
-        dialect: "sqlite",
-        storage: "db.sqlite"
-    }),
+    connection:new Sequelize("mysql://sql10484532:yEsniKdVW3@sql10.freemysqlhosting.net:3306/sql10484532"),
     newConnection: async function() {
         await this.closeConnection();
-        this.connection = new Sequelize({
-            dialect: "sqlite",
-            storage: "db.sqlite"
-        });
+        this.connection = new Sequelize("mysql://sql10484532:yEsniKdVW3@sql10.freemysqlhosting.net:3306/sql10484532");
     },
     closeConnection: async function() {
         if (this.connection != null) {
